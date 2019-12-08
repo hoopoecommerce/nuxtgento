@@ -1,0 +1,177 @@
+{
+  "__schema": {
+    "types": [
+      {
+        "kind": "INTERFACE",
+        "name": "CartAddressInterface",
+        "possibleTypes": [
+          {
+            "name": "BillingCartAddress"
+          },
+          {
+            "name": "ShippingCartAddress"
+          }
+        ]
+      },
+      {
+        "kind": "INTERFACE",
+        "name": "CartItemInterface",
+        "possibleTypes": [
+          {
+            "name": "ConfigurableCartItem"
+          },
+          {
+            "name": "SimpleCartItem"
+          },
+          {
+            "name": "VirtualCartItem"
+          }
+        ]
+      },
+      {
+        "kind": "INTERFACE",
+        "name": "ProductInterface",
+        "possibleTypes": [
+          {
+            "name": "BundleProduct"
+          },
+          {
+            "name": "ConfigurableProduct"
+          },
+          {
+            "name": "SimpleProduct"
+          },
+          {
+            "name": "DownloadableProduct"
+          },
+          {
+            "name": "GroupedProduct"
+          },
+          {
+            "name": "VirtualProduct"
+          }
+        ]
+      },
+      {
+        "kind": "INTERFACE",
+        "name": "CategoryInterface",
+        "possibleTypes": [
+          {
+            "name": "CategoryTree"
+          }
+        ]
+      },
+      {
+        "kind": "INTERFACE",
+        "name": "MediaGalleryInterface",
+        "possibleTypes": [
+          {
+            "name": "ProductImage"
+          },
+          {
+            "name": "ProductVideo"
+          }
+        ]
+      },
+      {
+        "kind": "INTERFACE",
+        "name": "ProductLinksInterface",
+        "possibleTypes": [
+          {
+            "name": "ProductLinks"
+          }
+        ]
+      },
+      {
+        "kind": "INTERFACE",
+        "name": "LayerFilterItemInterface",
+        "possibleTypes": [
+          {
+            "name": "LayerFilterItem"
+          },
+          {
+            "name": "SwatchLayerFilterItem"
+          }
+        ]
+      },
+      {
+        "kind": "INTERFACE",
+        "name": "CustomizableOptionInterface",
+        "possibleTypes": [
+          {
+            "name": "CustomizableAreaOption"
+          },
+          {
+            "name": "CustomizableCheckboxOption"
+          },
+          {
+            "name": "CustomizableDateOption"
+          },
+          {
+            "name": "CustomizableDropDownOption"
+          },
+          {
+            "name": "CustomizableFieldOption"
+          },
+          {
+            "name": "CustomizableFileOption"
+          },
+          {
+            "name": "CustomizableMultipleOption"
+          },
+          {
+            "name": "CustomizableRadioOption"
+          }
+        ]
+      },
+      {
+        "kind": "INTERFACE",
+        "name": "CustomizableProductInterface",
+        "possibleTypes": [
+          {
+            "name": "BundleProduct"
+          },
+          {
+            "name": "ConfigurableProduct"
+          },
+          {
+            "name": "SimpleProduct"
+          },
+          {
+            "name": "DownloadableProduct"
+          },
+          {
+            "name": "VirtualProduct"
+          }
+        ]
+      },
+      {
+        "kind": "INTERFACE",
+        "name": "PhysicalProductInterface",
+        "possibleTypes": [
+          {
+            "name": "BundleProduct"
+          },
+          {
+            "name": "ConfigurableProduct"
+          },
+          {
+            "name": "SimpleProduct"
+          },
+          {
+            "name": "GroupedProduct"
+          }
+        ]
+      },
+      {
+        "kind": "INTERFACE",
+        "name": "SwatchLayerFilterItemInterface",
+        "possibleTypes": [
+          {
+            "name": "SwatchLayerFilterItem"
+          }
+        ]
+      }
+    ]
+  }
+}
