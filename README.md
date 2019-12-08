@@ -1,6 +1,5 @@
-# NuxtGento
+An expermental [Nuxt.js v2][Nuxt.js] storefront for [Magento v2.3][Magento] 
 
-> Nuxt Storefront for Magento 2
 
 ## Build Setup
 
@@ -20,3 +19,7 @@ $ yarn run generate
 ```
 
 For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
+
+
+[Nuxt.js]: https://github.com/nuxt/nuxt.js
+[Magento]: https://github.com/magento/magento2
