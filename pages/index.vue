@@ -14,7 +14,9 @@
           <div v-else-if="data" class="result apollo">
             <ul>
               <li v-for="category in data.category.children" :key="category.id">
-                <NuxtLink :to="category.url_path+'.html'">{{ category.name }}</NuxtLink>
+                <NuxtLink :to="category.url_path + '.html'">{{
+                  category.name
+                }}</NuxtLink>
               </li>
             </ul>
           </div>
@@ -25,11 +27,11 @@
 </template>
 
 <script>
-  export default {
-    computed: {
-      rootCategoryId() {
-        return 2
-      },
+export default {
+  computed: {
+    rootCategoryId() {
+      return 2
     }
   }
+}
 </script>

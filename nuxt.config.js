@@ -1,5 +1,4 @@
 import pkg from './package'
-import magentoRoute from './plugins/urlResolver'
 
 export default {
   mode: 'universal',
@@ -30,7 +29,6 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  // plugins: [],
   plugins: ['~/plugins/urlResolver'],
 
   router: {
@@ -66,7 +64,9 @@ export default {
     }
   },
 
-  proxy: ['http://magento23.test/graphql'],
+  proxy: [
+    'https://master-7rqtwti-mfwmkrjfqvbjk.us-4.magentosite.cloud/graphql'
+  ],
   /*
    ** Build configuration
    */
@@ -76,14 +76,14 @@ export default {
      */
     extend(config, ctx) {
       // Run ESLint on save
-      // if (ctx.isDev && ctx.isClient) {
-      //   config.module.rules.push({
-      //     enforce: 'pre',
-      //     test: /\.(js|vue)$/,
-      //     loader: 'eslint-loader',
-      //     exclude: /(node_modules)/
-      //   })
-      // }
+      if (ctx.isDev && ctx.isClient) {
+        config.module.rules.push({
+          enforce: 'pre',
+          test: /\.(js|vue)$/,
+          loader: 'eslint-loader',
+          exclude: /(node_modules)/
+        })
+      }
     }
   }
 }

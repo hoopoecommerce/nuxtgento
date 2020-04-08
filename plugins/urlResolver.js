@@ -5,7 +5,7 @@ export default ({ app }) => {
       const { data } = await app.apolloProvider.defaultClient.query({
         query: require('~/queries/urlResolver.graphql'),
         variables: {
-          'urlKey': path
+          urlKey: path
         }
       })
       to.params.type = data.urlResolver.type.toLowerCase()

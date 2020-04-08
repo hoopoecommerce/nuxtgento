@@ -5,4 +5,3 @@ export const state = () => ({
   prevPageTotal: null,
   rootCategoryId: 2
 })
-

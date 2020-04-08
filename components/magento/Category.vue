@@ -15,7 +15,7 @@
           <ul>
             <li v-for="product in data.products.items" :key="product.id">
               <NuxtLink :to="'/' + product.url_key + '.html'">
-                {{product.name}}
+                {{ product.name }}
               </NuxtLink>
             </li>
           </ul>
@@ -26,8 +26,7 @@
 </template>
 
 <script>
-  export default {
-    props: ['id']
-  }
+export default {
+  props: ['id']
+}
 </script>
-

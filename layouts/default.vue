@@ -1,9 +1,7 @@
 <template>
   <div>
     <nuxt />
-    <apollo-query
-      :query="require('~/queries/getStoreConfigData.graphql')"
-    >
+    <apollo-query :query="require('~/queries/getStoreConfigData.graphql')">
       <template slot-scope="{ result: { loading, error, data }, isLoading }">
         <!-- Loading -->
         <div v-if="isLoading" class="loading apollo">Loading...</div>
@@ -16,7 +14,9 @@
       </template>
     </apollo-query>
     <nuxt-link to="/">home</nuxt-link>
-    <nuxt-link to="privacy-policy-cookie-restriction-mode">Privacy and Cookie Policy</nuxt-link>
+    <nuxt-link to="privacy-policy-cookie-restriction-mode"
+      >Privacy and Cookie Policy</nuxt-link
+    >
   </div>
 </template>
 

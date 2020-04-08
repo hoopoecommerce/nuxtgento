@@ -10,8 +10,11 @@
         <!-- Error -->
         <div v-else-if="error" class="error apollo">An error occurred</div>
         <!-- Result -->
-        <div v-else-if="data && data.productDetail.items[0]" class="result apollo">
-          <product :product="data.productDetail.items[0]"/>
+        <div
+          v-else-if="data && data.productDetail.items[0]"
+          class="result apollo"
+        >
+          <product :product="data.productDetail.items[0]" />
         </div>
       </template>
     </apollo-query>
@@ -19,18 +22,17 @@
 </template>
 
 <script>
-  import Product from '~/components/Product.vue'
+import Product from '~/components/Product.vue'
 
-  export default {
-    components: {
-      Product
-    },
-    computed: {
-      path() {
-        return this.$route.path.replace(/^\//, '').replace('.html','')
-      }
-    },
-    props: ['id']
+export default {
+  components: {
+    Product
+  },
+  props: ['id'],
+  computed: {
+    path() {
+      return this.$route.path.replace(/^\//, '').replace('.html', '')
+    }
   }
+}
 </script>
-
