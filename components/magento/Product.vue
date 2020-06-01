@@ -2,11 +2,14 @@
   <div>
     <apollo-query
       :query="require('~/queries/getProductDetail.graphql')"
-      :variables="{ urlKey: path, onServer: false }"
+      :variables="{
+        urlKey: $route.path.replace('/', '').replace('.html', ''),
+        onServer: false
+      }"
     >
       <template slot-scope="{ result: { loading, error, data }, isLoading }">
         <!-- Loading -->
-        <div v-if="isLoading" class="loading apollo">Loading...</div>
+        <BaseLoader v-if="isLoading" />
         <!-- Error -->
         <div v-else-if="error" class="error apollo">An error occurred</div>
         <!-- Result -->
@@ -28,10 +31,10 @@ export default {
   components: {
     Product
   },
-  props: ['id'],
-  computed: {
-    path() {
-      return this.$route.path.replace(/^\//, '').replace('.html', '')
+  props: {
+    id: {
+      type: String,
+      required: true
     }
   }
 }

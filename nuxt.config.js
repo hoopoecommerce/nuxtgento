@@ -1,4 +1,5 @@
 import pkg from './package'
+require('dotenv').config()
 
 export default {
   mode: 'universal',
@@ -13,13 +14,19 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: pkg.description }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    htmlAttrs: {
+      class: 'antialiased text-black'
+    },
+    bodyAttrs: {
+      class: 'min-h-screen'
+    }
   },
 
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: '#fff' },
+  loading: { color: '#f60', height: '3px', throttle: 0 },
 
   /*
    ** Global CSS
@@ -29,14 +36,21 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/urlResolver'],
+  plugins: ['~/plugins/globals'],
+  /*
+   ** Nuxt.js dev-modules
+   */
+  buildModules: [
+    // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
+    '@nuxtjs/tailwindcss'
+  ],
 
   router: {
     extendRoutes(routes, resolve) {
       routes.push({
         name: 'magento',
         path: '*',
-        component: resolve(__dirname, '~/pages/magento/_type/_id.vue')
+        component: resolve(__dirname, '~/pages/_magento.vue')
       })
     }
   },
@@ -49,7 +63,8 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     '@nuxtjs/apollo',
-    '@nuxtjs/proxy'
+    '@nuxtjs/proxy',
+    '@bazzite/nuxt-optimized-images'
   ],
   /*
    ** Axios module configuration
@@ -58,15 +73,17 @@ export default {
     // See https://github.com/nuxt-community/axios-module#options
   },
 
+  optimizedImages: {
+    optimizeImages: true
+  },
+
   apollo: {
     clientConfigs: {
       default: '~/plugins/apollo-config.js'
     }
   },
 
-  proxy: [
-    'https://master-7rqtwti-mfwmkrjfqvbjk.us-4.magentosite.cloud/graphql'
-  ],
+  proxy: [process.env.MAGENTO_BACKEND_URL],
   /*
    ** Build configuration
    */

@@ -4,7 +4,7 @@
   "extensions": {
     "endpoints": {
       "Default GraphQL Endpoint": {
-        "url": "https://magento23.test/graphql",
+        "url": "http://magento.test/graphql",
         "headers": {
           "user-agent": "JS GraphQL"
         },
