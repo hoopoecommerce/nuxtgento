@@ -10,16 +10,16 @@
           <span class="px-2">/</span>
           <template v-for="(breadcrumb, index) in data.category.breadcrumbs">
             <nuxt-link
-              :to="`/${breadcrumb.category_url_path}.html`"
               :key="index"
+              :to="`/${breadcrumb.category_url_path}.html`"
             >
               {{ breadcrumb.category_name }}
             </nuxt-link>
-            <span class="px-2" :key="`seprator-${index}`">/</span>
+            <span :key="`seprator-${index}`" class="px-2">/</span>
           </template>
           <nuxt-link
-            :to="`/${data.category.url_path}.html`"
             v-if="currentProduct"
+            :to="`/${data.category.url_path}.html`"
           >
             {{ data.category.name }}
           </nuxt-link>

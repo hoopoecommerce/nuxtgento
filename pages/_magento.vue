@@ -18,12 +18,6 @@ export default {
       component: import('~/components/magento/CmsPage.vue')
     })
   },
-  data() {
-    return {
-      type: 'index',
-      id: ''
-    }
-  },
   asyncData({ route, app, error }) {
     const path = route.path.replace('/', '')
     if (!path) {
@@ -50,6 +44,12 @@ export default {
       .catch(e => {
         error({ statusCode: 404, message: 'Page not found' })
       })
+  },
+  data() {
+    return {
+      type: 'index',
+      id: ''
+    }
   }
 }
 </script>

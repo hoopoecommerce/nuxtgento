@@ -10,7 +10,7 @@
       >
         <BaseInlineSvg svg="chevron_left.svg" />
       </button>
-      <div class="pl-5 ml-0 mr-auto">Main Menu</div>
+      <div class="pl-5 ml-0 mr-auto uppercase">Main Menu</div>
       <button class="w-12 h-12 p-3 mr-0" @click="toggleNavigation">
         <BaseInlineSvg svg="multiply.svg" />
       </button>
