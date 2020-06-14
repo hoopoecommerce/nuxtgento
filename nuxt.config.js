@@ -78,6 +78,7 @@ export default {
   },
 
   apollo: {
+    tokenName: 'signin_token',
     clientConfigs: {
       default: '~/plugins/apollo-config.js'
     }
