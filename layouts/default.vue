@@ -8,17 +8,3 @@
     <Footer />
   </div>
 </template>
-
-<script>
-import Header from '~/components/Header'
-import Footer from '~/components/Footer'
-import Navigation from '~/components/navigation/Navigation'
-
-export default {
-  components: {
-    Header,
-    Footer,
-    Navigation
-  }
-}
-</script>

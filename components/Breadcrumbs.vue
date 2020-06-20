@@ -43,7 +43,7 @@ export default {
       required: true
     },
     currentProduct: {
-      Type: String,
+      type: String,
       default: null
     }
   }

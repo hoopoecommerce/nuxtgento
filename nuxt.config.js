@@ -4,6 +4,8 @@ require('dotenv').config()
 export default {
   mode: 'universal',
 
+  components: true,
+
   /*
    ** Headers of the page
    */
@@ -36,7 +38,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/globals'],
+  plugins: [],
   /*
    ** Nuxt.js dev-modules
    */
@@ -50,7 +52,7 @@ export default {
       routes.push({
         name: 'magento',
         path: '*',
-        component: resolve(__dirname, '~/pages/_magento.vue')
+        component: resolve(__dirname, '~/components/magento/Magento.vue')
       })
     }
   },

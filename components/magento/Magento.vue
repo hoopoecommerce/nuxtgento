@@ -1,23 +1,14 @@
 <template>
-  <component :is="type" :id="id" />
+  <div>
+    <LazyIndex v-if="type === 'index'" />
+    <LazyCategory v-if="type === 'category'" :id="id" />
+    <LazyProduct v-if="type === 'product'" :id="id" />
+    <LazyCmsPage v-if="type === 'cms_page'" :id="id" />
+  </div>
 </template>
 
 <script>
 export default {
-  components: {
-    Category: () => ({
-      component: import('~/components/magento/Category.vue')
-    }),
-    Index: () => ({
-      component: import('~/components/Index.vue')
-    }),
-    Product: () => ({
-      component: import('~/components/magento/Product.vue')
-    }),
-    cms_page: () => ({
-      component: import('~/components/magento/CmsPage.vue')
-    })
-  },
   asyncData({ route, app, error }) {
     const path = route.path.replace('/', '')
     if (!path) {

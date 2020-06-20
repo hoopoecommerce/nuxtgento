@@ -8,11 +8,7 @@
 </template>
 
 <script>
-import CategoryTree from '~/components/navigation/CategoryTree'
 export default {
-  components: {
-    CategoryTree
-  },
   computed: {
     navigationIsOpen() {
       return this.$store.state.navigationIsOpen
