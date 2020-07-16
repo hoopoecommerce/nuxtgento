@@ -3,6 +3,7 @@ import {
   InMemoryCache,
   IntrospectionFragmentMatcher
 } from 'apollo-cache-inmemory'
+import { persistCache } from 'apollo-cache-persist'
 import introspectionQueryResultData from '../fragmentTypes.json'
 
 export default () => {
@@ -15,6 +16,12 @@ export default () => {
     useGETForQueries: true
   })
   const cache = new InMemoryCache({ fragmentMatcher })
+  if (process.client) {
+    persistCache({
+      cache,
+      storage: window.localStorage
+    })
+  }
   return {
     httpEndpoint: uri,
     link,
