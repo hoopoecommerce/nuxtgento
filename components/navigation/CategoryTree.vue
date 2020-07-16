@@ -8,11 +8,11 @@
         class="w-12 h-12 p-3"
         @click="setCategoryId(rootCategoryId)"
       >
-        <BaseInlineSvg svg="chevron_left.svg" />
+        <BaseIcon svg="chevron_left.svg" />
       </button>
       <div class="pl-5 ml-0 mr-auto uppercase">Main Menu</div>
       <button class="w-12 h-12 p-3 mr-0" @click="toggleNavigation">
-        <BaseInlineSvg svg="multiply.svg" />
+        <BaseIcon svg="multiply.svg" />
       </button>
     </div>
     <apollo-query
@@ -34,7 +34,7 @@
                 @click="setCategoryId(menuItem.id)"
               >
                 <div>{{ menuItem.name }}</div>
-                <BaseInlineSvg svg="chevron_right.svg" class="w-12 h-12 p-4" />
+                <BaseIcon svg="chevron_right.svg" class="w-12 h-12 p-4" />
               </button>
               <nuxt-link
                 v-else

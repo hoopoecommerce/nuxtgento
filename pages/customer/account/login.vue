@@ -13,34 +13,28 @@
         <h1 class="text-center text-3xl mb-5">Customer Login</h1>
         <form @submit.prevent="mutate()">
           <div class="mb-4">
-            <label
-              class="block text-gray-700 text-sm font-bold mb-2"
-              for="email"
-            >
-              Email
-            </label>
-            <input
+            <BaseInput
               id="email"
               v-model="email"
-              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               type="text"
               placeholder="Email"
-            />
+            >
+              <template #label>
+                Email
+              </template>
+            </BaseInput>
           </div>
           <div class="mb-6">
-            <label
-              class="block text-gray-700 text-sm font-bold mb-2"
-              for="password"
-            >
-              Password
-            </label>
-            <input
+            <BaseInput
               id="password"
               v-model="password"
-              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               type="password"
               placeholder="******************"
-            />
+            >
+              <template #label>
+                Password
+              </template>
+            </BaseInput>
           </div>
           <div class="mb-6">
             <button
