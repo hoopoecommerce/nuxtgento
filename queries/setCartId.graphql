@@ -1,0 +1,3 @@
+mutation setCartId($value: String!) {
+  setCartId(value: $value) @client
+}

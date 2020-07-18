@@ -8,6 +8,9 @@
     <nuxt-link to="/" alt="Hoopoe" class="mx-auto">
       <BaseIcon svg="logo.svg" class="w-12 h-12 p-2" />
     </nuxt-link>
+    <button @click="toggleCart">
+      <BaseIcon svg="cart.svg" class="w-12 h-12 p-3" />
+    </button>
   </header>
 </template>
 
@@ -16,6 +19,9 @@ export default {
   methods: {
     toggleNavigation() {
       this.$store.commit('toggleNavigation')
+    },
+    toggleCart() {
+      this.$store.commit('toggleCart')
     }
   }
 }

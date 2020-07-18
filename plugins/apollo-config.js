@@ -4,6 +4,7 @@ import {
   IntrospectionFragmentMatcher
 } from 'apollo-cache-inmemory'
 import { persistCache } from 'apollo-cache-persist'
+import gql from 'graphql-tag'
 import introspectionQueryResultData from '../fragmentTypes.json'
 
 export default () => {
@@ -16,6 +17,32 @@ export default () => {
     useGETForQueries: true
   })
   const cache = new InMemoryCache({ fragmentMatcher })
+
+  const resolvers = {
+    Mutation: {
+      setCartId: (root, { value }, { cache }) => {
+        const data = {
+          CartId: value
+        }
+        cache.writeData({ data })
+        return null
+      }
+    }
+  }
+
+  const typeDefs = gql`
+    type Query {
+      CartId: String!
+    }
+  `
+
+  const onCacheInit = cache => {
+    const data = {
+      CartId: null
+    }
+    cache.writeData({ data })
+  }
+
   if (process.client) {
     persistCache({
       cache,
@@ -26,6 +53,9 @@ export default () => {
     httpEndpoint: uri,
     link,
     cache,
+    resolvers,
+    typeDefs,
+    onCacheInit,
     defaultHttpLink: false
   }
 }

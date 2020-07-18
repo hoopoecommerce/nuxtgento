@@ -61,10 +61,25 @@ export default {
   },
   methods: {
     async onDone({ data }) {
+      // Get source cart id (guest cart id).
+      // Sign in and set the token.
       await this.$apolloHelpers.onLogin(data.generateCustomerToken.token)
       await this.$apollo.query({
         query: require('~/queries/getCustomer.graphql')
       })
+      // Clear all cart/customer data from cache.
+      // Create and get the customer's cart id.
+      const cartData = await this.$apollo.mutate({
+        mutation: require('~/queries/createCart.graphql')
+      })
+      this.$apollo.mutate({
+        mutation: require('~/queries/setCartId.graphql'),
+        variables: {
+          value: cartData.data.cartId
+        }
+      })
+      // Merge the guest cart into the customer cart.
+      // Ensure old stores are updated with any new data.
       this.$router.push('/customer/account')
     }
   }
