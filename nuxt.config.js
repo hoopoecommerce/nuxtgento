@@ -86,7 +86,10 @@ export default {
     }
   },
 
-  proxy: [process.env.MAGENTO_BACKEND_URL],
+  proxy: [
+    `${process.env.MAGENTO_BACKEND_URL}graphql`,
+    `${process.env.MAGENTO_BACKEND_URL}media`
+  ],
   /*
    ** Build configuration
    */

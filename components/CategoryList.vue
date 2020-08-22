@@ -22,9 +22,20 @@
         <h2 class="text-xl uppercase mb-6 text-center">
           {{ data.category.name }}
         </h2>
-        <ul>
-          <li v-for="product in data.products.items" :key="product.id">
+        <ul class="flex flex-wrap">
+          <li
+            v-for="product in data.products.items"
+            :key="product.id"
+            class="w-1/2 md:w-1/3"
+          >
             <NuxtLink :to="'/' + product.url_key + '.html'">
+              <img
+                :key="product.media_gallery_entries[0].id"
+                :src="
+                  `/media/catalog/product${product.media_gallery_entries[0].file}`
+                "
+                alt=""
+              />
               {{ product.name }}
             </NuxtLink>
           </li>
