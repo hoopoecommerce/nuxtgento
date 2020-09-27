@@ -1,6 +1,6 @@
 # NuxtGento
 
-> Nuxt Storefront R&D for Magento 2
+> Nuxt starter Storefront R&D for Magento 2
 
 ## Build Setup
 
