@@ -23,7 +23,7 @@
     "cross-env": "^7.0.0",
     "dotenv": "^8.2.0",
     "graphql-tag": "^2.10.3",
-    "nuxt": "^2.13"
+    "nuxt": "^3.4"
   },
   "devDependencies": {
     "@bazzite/nuxt-optimized-images": "^0.4.0",
